@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://dq7viy3jea2hr"]
+
+[ext_resource type="Script" uid="uid://bgro3rx8hkt25" path="res://scripts/01_battle.gd" id="1_o08tv"]
+[ext_resource type="Texture2D" uid="uid://btj4i6sf1cx65" path="res://temp. assets/dde.jpg" id="2_hd5oe"]
+[ext_resource type="Texture2D" uid="uid://cj2cq273qyvpv" path="res://icon.svg" id="2_oygwv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhgvj"]
+atlas = ExtResource("2_hd5oe")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ex018"]
+bg_color = Color(0.1130865, 0.3778795, 0.08188937, 1)
+
+[node name="BattleControl" type="Control" unique_id=1291943861]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o08tv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1806401033]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6868004, 0.96409065, 0.9474196, 1)
+
+[node name="MainLayout" type="VBoxContainer" parent="." unique_id=1711447777]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BattleArea" type="HBoxContainer" parent="MainLayout" unique_id=294181460]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EnemySide" type="CenterContainer" parent="MainLayout/BattleArea" unique_id=214914442]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainLayout/BattleArea/EnemySide" unique_id=1530880821]
+layout_mode = 2
+
+[node name="EnemyHP" type="ProgressBar" parent="MainLayout/BattleArea/EnemySide/VBoxContainer" unique_id=623304449]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MainLayout/BattleArea/EnemySide/VBoxContainer" unique_id=464041455]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(120, 120)
+layout_mode = 2
+texture = SubResource("AtlasTexture_xhgvj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlrSide" type="CenterContainer" parent="MainLayout/BattleArea" unique_id=1141220212]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainLayout/BattleArea/PlrSide" unique_id=936520009]
+layout_mode = 2
+
+[node name="PlayerHP" type="ProgressBar" parent="MainLayout/BattleArea/PlrSide/VBoxContainer" unique_id=592072809]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MainLayout/BattleArea/PlrSide/VBoxContainer" unique_id=1933671443]
+layout_mode = 2
+texture = ExtResource("2_oygwv")
+
+[node name="PanelContainer" type="PanelContainer" parent="MainLayout" unique_id=1949502781]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ex018")
+
+[node name="Label" type="Label" parent="MainLayout/PanelContainer" unique_id=1489903880]
+layout_mode = 2
+text = "A wild [enemy] appears!"
+horizontal_alignment = 1
+
+[node name="ActionContainer" type="PanelContainer" parent="MainLayout" unique_id=2029513227]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+
+[node name="RunButton" type="Button" parent="MainLayout/ActionContainer" unique_id=1617380597]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "RETREAT"
+
+[node name="AtkButton" type="Button" parent="MainLayout/ActionContainer" unique_id=1644617281]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "ATTACK"
+
+[node name="BlockButton" type="Button" parent="MainLayout/ActionContainer" unique_id=780123885]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "GUARD"
+
+[connection signal="pressed" from="MainLayout/ActionContainer/RunButton" to="." method="_on_run_button_pressed"]
+[connection signal="pressed" from="MainLayout/ActionContainer/AtkButton" to="." method="_on_atk_button_pressed"]
+[connection signal="pressed" from="MainLayout/ActionContainer/BlockButton" to="." method="_on_block_button_pressed"]

@@ -1,0 +1,14 @@
+CollisionShape2D
+AnimatedSprite2D
+AnimatableBody2D
+Button
+RichTextLabel
+VBoxContainer
+PanelContainer
+Camera2D
+Control
+Node2D
+TileMapLayer
+StaticBody2D
+Node
+Area2D

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ds2dkvki4fd4m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nnhtf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uuv2d"]
+
+[node name="npc1" type="AnimatableBody2D" unique_id=878677489]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=475222971]
+sprite_frames = SubResource("SpriteFrames_nnhtf")
+frame_progress = 0.79956853
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=855381294]
+shape = SubResource("RectangleShape2D_uuv2d")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ctwwqy2ss8gmf"]
+
+[ext_resource type="Script" uid="uid://cwkp2agawyc6e" path="res://scripts/00_world.gd" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://dq7viy3jea2hr" path="res://scenes/battleScene.tscn" id="2_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://rm3uws0m0vvu" path="res://plr.tscn" id="3_k0juu"]
+[ext_resource type="Script" uid="uid://c7cyk15s8t0f3" path="res://scripts/00_enemyData.gd" id="4_qfnet"]
+[ext_resource type="Resource" uid="uid://bjh1lu37hy53j" path="res://resources/enemies/scientist.tres" id="5_i7141"]
+[ext_resource type="Resource" uid="uid://bu2mfpa4fqfmb" path="res://resources/enemies/guard.tres" id="6_4mrxx"]
+
+[node name="World" type="Node2D" unique_id=193542932]
+script = ExtResource("1_nnsk1")
+battle_scene = ExtResource("2_4wyf3")
+
+[node name="plr" parent="." unique_id=1302770804 instance=ExtResource("3_k0juu")]
+position = Vector2(533, 288)
+monsters = Array[ExtResource("4_qfnet")]([ExtResource("5_i7141"), ExtResource("6_4mrxx")])
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1771996581]

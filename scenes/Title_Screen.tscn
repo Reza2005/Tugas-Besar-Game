@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://d0p3uywney63w"]
+
+[ext_resource type="Theme" uid="uid://c470tnqsj1f3q" path="res://assets/ui elements/new_theme.tres" id="1_epng2"]
+[ext_resource type="PackedScene" uid="uid://0le3t3blsldc" path="res://scenes/play_button.tscn" id="2_88hrj"]
+[ext_resource type="Script" uid="uid://bubd405losgsx" path="res://scripts/play_button.gd" id="3_f0wge"]
+[ext_resource type="PackedScene" uid="uid://dpjbhuqhfol02" path="res://scenes/option_button.tscn" id="3_yikp0"]
+[ext_resource type="PackedScene" uid="uid://plgxvibwsxw1" path="res://scenes/quit_button.tscn" id="4_f0wge"]
+[ext_resource type="Script" uid="uid://n4y64xjpue38" path="res://scripts/option_button.gd" id="5_25d2p"]
+[ext_resource type="Script" uid="uid://bbsbrokaoc51k" path="res://scripts/quit_button.gd" id="5_88hrj"]
+
+[node name="Control" type="Control" unique_id=1452029217]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_epng2")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2091520170]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1354194559]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Title" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=2107063284]
+layout_mode = 2
+theme_type_variation = &"RichTextLabelTitle"
+theme_override_font_sizes/normal_font_size = 96
+bbcode_enabled = true
+text = "[wave]OROUBOROS"
+fit_content = true
+autowrap_mode = 0
+
+[node name="PlayButton" parent="PanelContainer/VBoxContainer" unique_id=592916096 instance=ExtResource("2_88hrj")]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+script = ExtResource("3_f0wge")
+
+[node name="OptionButton" parent="PanelContainer/VBoxContainer" unique_id=750871203 instance=ExtResource("3_yikp0")]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+script = ExtResource("5_25d2p")
+
+[node name="QuitButton" parent="PanelContainer/VBoxContainer" unique_id=512330429 instance=ExtResource("4_f0wge")]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+script = ExtResource("5_88hrj")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/PlayButton" to="PanelContainer/VBoxContainer/PlayButton" method="_on_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/OptionButton" to="PanelContainer/VBoxContainer/OptionButton" method="_on_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/OptionButton" to="PanelContainer/VBoxContainer/QuitButton" method="_on_option_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/QuitButton" to="PanelContainer/VBoxContainer/QuitButton" method="_on_pressed"]
