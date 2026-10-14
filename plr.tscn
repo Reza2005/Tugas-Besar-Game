@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://rm3uws0m0vvu"]
+
+[ext_resource type="Texture2D" uid="uid://cj2cq273qyvpv" path="res://icon.svg" id="1_2aw8l"]
+[ext_resource type="Script" uid="uid://b5hh58um4ucji" path="res://scripts/plr.gd" id="1_unb2m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qocg"]
+size = Vector2(120, 116)
+
+[node name="plr" type="CharacterBody2D" unique_id=1302770804]
+script = ExtResource("1_unb2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1861197229]
+texture = ExtResource("1_2aw8l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1210868619]
+shape = SubResource("RectangleShape2D_2qocg")
+
+[node name="States" type="Node" parent="." unique_id=900080990]
+
+[node name="Blocking" type="Node" parent="States" unique_id=786197855]
+
+[node name="Idle" type="Node" parent="States" unique_id=942386998]

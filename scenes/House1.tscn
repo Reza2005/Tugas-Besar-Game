@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://dwd2dvbvwnvay"]
+
+[ext_resource type="Texture2D" uid="uid://jki0u7hx4rid" path="res://assets/sprites/fantasy_ [version 2.0]/forest_/forestVillage_ [version 2.0]/buildings_/redHouse_0_0.png" id="1_dlj2c"]
+[ext_resource type="Script" uid="uid://c4x1sosngcbwo" path="res://scripts/house_1.gd" id="1_ld5cv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld5cv"]
+atlas = ExtResource("1_dlj2c")
+region = Rect2(11, 23, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3rva"]
+atlas = ExtResource("1_dlj2c")
+region = Rect2(107, 23, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccs7e"]
+atlas = ExtResource("1_dlj2c")
+region = Rect2(203, 23, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wrgw"]
+atlas = ExtResource("1_dlj2c")
+region = Rect2(299, 23, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym54l"]
+atlas = ExtResource("1_dlj2c")
+region = Rect2(11, 119, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfhq3"]
+atlas = ExtResource("1_dlj2c")
+region = Rect2(107, 119, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqejq"]
+atlas = ExtResource("1_dlj2c")
+region = Rect2(203, 119, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3glc"]
+atlas = ExtResource("1_dlj2c")
+region = Rect2(299, 119, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nnhtf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ld5cv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3rva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccs7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wrgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym54l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfhq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqejq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3glc")
+}],
+"loop": 1,
+"name": &"house1",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjhsp"]
+size = Vector2(65, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnhtf"]
+size = Vector2(8, 21)
+
+[node name="House1" type="StaticBody2D" unique_id=442683204]
+script = ExtResource("1_ld5cv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1313215752]
+sprite_frames = SubResource("SpriteFrames_nnhtf")
+animation = &"house1"
+frame_progress = 0.48427016
+offset = Vector2(9, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=412017869]
+position = Vector2(5.5, 14)
+shape = SubResource("RectangleShape2D_sjhsp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1671211408]
+position = Vector2(41, 22)
+shape = SubResource("RectangleShape2D_nnhtf")

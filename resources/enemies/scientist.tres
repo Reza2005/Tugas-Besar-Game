@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="enemyData" format=3 uid="uid://bjh1lu37hy53j"]
+
+[ext_resource type="Script" uid="uid://c7cyk15s8t0f3" path="res://scripts/00_enemyData.gd" id="1_0xg3g"]
+[ext_resource type="Texture2D" uid="uid://btj4i6sf1cx65" path="res://temp. assets/dde.jpg" id="2_0xg3g"]
+
+[resource]
+script = ExtResource("1_0xg3g")
+texture = ExtResource("2_0xg3g")
+health = 25
+damage = 10
+metadata/_custom_type_script = "uid://c7cyk15s8t0f3"
